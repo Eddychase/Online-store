@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
 import CheckoutProduct from '../components/CheckoutProduct'
+import { useSelector } from 'react-redux';
+import { selectItems } from '../slices/basketSlice';
 
 function Checkout() {
     const items = useSelector(selectItems);
@@ -30,7 +32,7 @@ function Checkout() {
                                 title={item.title}
                                 rating={item.rating}
                                 price={item.price}
-                                description={item.category}
+                                description={item.description}
                                 image={item.image}
                             />
                         ))}
