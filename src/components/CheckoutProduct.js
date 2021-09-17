@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import Currency from 'react-currency-formatter';
 import { useDispatch } from 'react-redux';
-import { addToBasket, removeFromBasket, removefromBasket } from '../slices/basketSlice';
+import { addToBasket, removeFromBasket } from '../slices/basketSlice';
 
 function CheckoutProduct({ id, title, price, rating, description, category, image }) {
     const dispatch = useDispatch();
@@ -11,7 +11,7 @@ function CheckoutProduct({ id, title, price, rating, description, category, imag
     const addItemToBasket = () => {
         const product = { id, title, price, rating, description, category, image }
         //push item to redux store
-        dispatch(addItemToBasket(product))
+        dispatch(addToBasket(product))
     }
 
     const removeItemFromBasket = () => {
